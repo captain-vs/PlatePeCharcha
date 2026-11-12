@@ -3,25 +3,58 @@
   "name": "PlatePeCharcha: Smart Canteen Pre-Order & Token System",
   "short_name": "PlatePeCharcha",
   "description": "Smart college canteen 15-minute slot pre-ordering, digital tokens, and real-time Kitchen Display System (KDS).",
+  "lang": "en-IN",
+  "dir": "ltr",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
   "orientation": "any",
   "background_color": "#0f172a",
   "theme_color": "#ea580c",
+  "prefer_related_applications": false,
+  "related_applications": [],
   "categories": ["food", "education", "productivity"],
   "icons": [
     {
       "src": "/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/icons/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "PlatePeCharcha Smart Canteen KDS and Pre-Order Dashboard"
+    },
+    {
+      "src": "/icons/screenshot-mobile.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "PlatePeCharcha Mobile Slot Booking and Live Digital Token"
     }
   ]
 }
