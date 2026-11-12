@@ -31,9 +31,16 @@ export default function Navbar() {
   const readyCount = orders.filter((o) => o.status === 'READY').length;
 
   // Strict Route Guard: Logged-in users NEVER see the landing page ('/') or '/auth'
+  // Strict Route Guard: Allow '/privacy' for everyone (logged in or logged out)
   useEffect(() => {
     if (!hydrated) return;
-    const isPublicRoute = pathname === '/' || pathname.startsWith('/auth') || pathname.startsWith('/privacy');
+
+    // 1. Never redirect away from the Privacy Policy page
+    if (pathname.startsWith('/privacy')) {
+      return;
+    }
+
+    const isPublicRoute = pathname === '/' || pathname.startsWith('/auth');
 
     if (!user && !isPublicRoute) {
       router.replace('/auth');
