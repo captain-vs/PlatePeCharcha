@@ -33,7 +33,7 @@ export default function Navbar() {
   // Strict Route Guard: Logged-in users NEVER see the landing page ('/') or '/auth'
   useEffect(() => {
     if (!hydrated) return;
-    const isPublicRoute = pathname === '/' || pathname.startsWith('/auth');
+    const isPublicRoute = pathname === '/' || pathname.startsWith('/auth') || pathname.startsWith('/privacy');
 
     if (!user && !isPublicRoute) {
       router.replace('/auth');
