@@ -2,3 +2,27 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
 }
+/* Dedicated top title bar line for Windows Store app so Min/Max/Close never overlap Navbar */
+@media (display-mode: window-controls-overlay) {
+  body::before {
+    content: "PlatePeCharcha — Smart Canteen System";
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    height: env(titlebar-area-height, 36px);
+    width: 100%;
+    background-color: #ea580c;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    -webkit-app-region: drag;
+    app-region: drag;
+  }
+
+  header {
+    top: env(titlebar-area-height, 36px) !important;
+  }
+}

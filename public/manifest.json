@@ -8,7 +8,6 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "display_override": ["window-controls-overlay", "standalone"],
   "orientation": "any",
   "background_color": "#0f172a",
   "theme_color": "#ea580c",
@@ -57,4 +56,4 @@
       "label": "PlatePeCharcha Mobile Slot Booking and Live Digital Token"
     }
   ]
-}
+} 
