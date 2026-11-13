@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer'; // Import our new client-side Footer[cite: 1]
 
 export const metadata: Metadata = {
   title: 'PlatePeCharcha | Smart Canteen Pre-Order & Token Management System',
@@ -32,9 +33,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen bg-slate-50 text-slate-900 antialiased">
+      <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased">
         <Navbar />
-        <main>{children}</main>
+        <main className="flex-1">{children}</main>
+        <Footer /> {/* Add global Footer at bottom */}
       </body>
     </html>
   );

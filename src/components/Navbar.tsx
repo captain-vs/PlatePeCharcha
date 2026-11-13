@@ -32,11 +32,15 @@ export default function Navbar() {
 
   // Strict Route Guard: Logged-in users NEVER see the landing page ('/') or '/auth'
   // Strict Route Guard: Allow '/privacy' for everyone (logged in or logged out)
+  // Strict Route Guard: Allow shared pages (/privacy, /directory, /help) for everyone
   useEffect(() => {
     if (!hydrated) return;
 
-    // 1. Never redirect away from the Privacy Policy page
-    if (pathname.startsWith('/privacy')) {
+    if (
+      pathname.startsWith('/privacy') ||
+      pathname.startsWith('/directory') ||
+      pathname.startsWith('/help')
+    ) {
       return;
     }
 
@@ -71,7 +75,7 @@ export default function Navbar() {
 
   const roleLinks = [];
   if (user?.role === 'CUSTOMER') {
-    roleLinks.push({ href: '/order', label: 'Customer App', icon: UtensilsCrossed });
+    roleLinks.push({ href: '/order', label: 'Customer Interface', icon: UtensilsCrossed });
   } else if (user?.role === 'KITCHEN_ADMIN') {
     roleLinks.push(
       { href: '/kitchen', label: 'Kitchen KDS', icon: ChefHat, badge: activeCount },
