@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer'; // Import our new client-side Footer[cite: 1]
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 export const metadata: Metadata = {
   title: 'PlatePeCharcha | Smart Canteen Pre-Order & Token Management System',
   description:
@@ -37,6 +38,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Analytics />
+        <SpeedInsights />
         <Footer /> {/* Add global Footer at bottom */}
       </body>
     </html>
